@@ -3,7 +3,7 @@ using Contacts.Core.DataAccess;
 
 namespace Contacts.Core.BusinessLogic.Services
 {
-    public abstract class BaseService : IBaseService
+    public abstract class BaseService
     {
         protected readonly IUnitOfWork UnitOfWork;
         protected readonly IMapper Mapper;

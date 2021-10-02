@@ -2,7 +2,7 @@
 
 namespace Contacts.BusinessLogic.Services.Abstract
 {
-    public interface IPersonService : IBaseService
+    public interface IContactService : IBaseService
     {
     }
 }

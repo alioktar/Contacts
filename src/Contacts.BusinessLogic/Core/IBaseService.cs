@@ -1,10 +1,9 @@
 ﻿using Contacts.Core.Entities.Abstract;
 using Contacts.Core.Response.Abstract;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Contacts.Core.BusinessLogic.Services
+namespace Contacts.BusinessLogic.Core
 {
     public interface IBaseService
     {
