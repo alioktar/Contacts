@@ -5,6 +5,11 @@ namespace Contacts.Entities.Concrete
 {
     public class Person : Entity
     {
+        public Person()
+        {
+            Contacts = new List<Contact>();
+        }
+
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Company { get; set; }
