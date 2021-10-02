@@ -1,0 +1,33 @@
+version: "3.4"
+
+services:
+  contacts_api:
+    image: contacts_api
+    build:
+      context: .
+      dockerfile: ./src/Contacts.ApiHost/Dockerfile
+    ports:
+      - 8080:80
+    networks:
+      - contacts_network
+
+  postgresql:
+    image: postgres
+    restart: always
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 5433:5432
+    networks:
+      - contacts_network
+
+volumes:
+  data:
+    driver: local
+
+networks:
+  contacts_network:
+    driver: bridge
