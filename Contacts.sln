@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Core", "src\Contacts.Core\Contacts.Core.csproj", "{AAA54803-D7F2-4509-BF93-932588DBDEC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Core", "src\Contacts.Core\Contacts.Core.csproj", "{AAA54803-D7F2-4509-BF93-932588DBDEC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.DataAccess", "src\Contacts.DataAccess\Contacts.DataAccess.csproj", "{00365596-D9D3-472C-A95C-A0D8635F4347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.DataAccess", "src\Contacts.DataAccess\Contacts.DataAccess.csproj", "{00365596-D9D3-472C-A95C-A0D8635F4347}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Entities", "src\Contacts.Entities\Contacts.Entities.csproj", "{C1A806EB-F9BA-408D-9E52-D560FA6F545D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Entities", "src\Contacts.Entities\Contacts.Entities.csproj", "{C1A806EB-F9BA-408D-9E52-D560FA6F545D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.DTOs", "src\Contacts.DTOs\Contacts.DTOs.csproj", "{914FD3F4-D320-4FE6-AC60-3BEF220EEDA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.DTOs", "src\Contacts.DTOs\Contacts.DTOs.csproj", "{914FD3F4-D320-4FE6-AC60-3BEF220EEDA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.BusinessLogic", "src\Contacts.BusinessLogic\Contacts.BusinessLogic.csproj", "{46417F3C-07EF-4CEE-91D9-885713F26DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.BusinessLogic", "src\Contacts.BusinessLogic\Contacts.BusinessLogic.csproj", "{46417F3C-07EF-4CEE-91D9-885713F26DBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.HttpApi", "src\Contacts.HttpApi\Contacts.HttpApi.csproj", "{A609E72A-BA62-4A00-B2E6-F28A11DF6DB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.HttpApi", "src\Contacts.HttpApi\Contacts.HttpApi.csproj", "{A609E72A-BA62-4A00-B2E6-F28A11DF6DB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.ApiHost", "src\Contacts.ApiHost\Contacts.ApiHost.csproj", "{F90420F3-448A-4A0A-A3DE-29DED0F56CA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.ApiHost", "src\Contacts.ApiHost\Contacts.ApiHost.csproj", "{F90420F3-448A-4A0A-A3DE-29DED0F56CA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Constants", "src\Contacts.Constants\Contacts.Constants.csproj", "{6EF57CDF-528D-48B8-BC58-889E0C9CA9AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F90420F3-448A-4A0A-A3DE-29DED0F56CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F90420F3-448A-4A0A-A3DE-29DED0F56CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F90420F3-448A-4A0A-A3DE-29DED0F56CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF57CDF-528D-48B8-BC58-889E0C9CA9AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF57CDF-528D-48B8-BC58-889E0C9CA9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF57CDF-528D-48B8-BC58-889E0C9CA9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF57CDF-528D-48B8-BC58-889E0C9CA9AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,15 +14,17 @@ namespace Contacts.DataAccess.Concrete.EntityFreamework
         private PersonRepository _personRepository;
         private ContactRepository _contactRepository;
         private AddressRepository _addressRepository;
+        private CompanyRepository _companyRepository;
 
         public UnitOfWork(DbContext context)
         {
             _context = context;
         }
 
-        public IPersonRepository personRepository => _personRepository = _personRepository ?? new PersonRepository(_context);
-        public IContactRepository contactRepository => _contactRepository = _contactRepository ?? new ContactRepository(_context);
-        public IAddressRepository addressRepository => _addressRepository = _addressRepository ?? new AddressRepository(_context);
+        public IPersonRepository PersonRepository => _personRepository = _personRepository ?? new PersonRepository(_context);
+        public IContactRepository ContactRepository => _contactRepository = _contactRepository ?? new ContactRepository(_context);
+        public IAddressRepository AddressRepository => _addressRepository = _addressRepository ?? new AddressRepository(_context);
+        public ICompanyRepository CompanyRepository => _companyRepository = _companyRepository ?? new CompanyRepository(_context);
 
         public async Task<int> SaveChangesAsync()
         {
