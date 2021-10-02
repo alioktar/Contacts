@@ -14,7 +14,7 @@ namespace Contacts.Core.DataAccess.EntityFreamework
         private readonly DbContext _context;
         private DbSet<TEntity> _entities;
 
-        protected virtual DbSet<TEntity> Entities => _entities ?? _context.Set<TEntity>();
+        protected virtual DbSet<TEntity> Entities => _entities = _entities ?? _context.Set<TEntity>();
 
         public EntityRepositoryBase(DbContext context)
         {

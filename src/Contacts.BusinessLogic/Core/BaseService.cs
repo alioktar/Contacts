@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Contacts.Core.DataAccess;
+using Contacts.DataAccess.Abstract;
 
-namespace Contacts.Core.BusinessLogic.Services
+namespace Contacts.BusinessLogic.Core
 {
     public abstract class BaseService
     {

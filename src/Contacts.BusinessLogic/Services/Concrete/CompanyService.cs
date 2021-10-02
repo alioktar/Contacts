@@ -1,52 +1,55 @@
 ﻿using AutoMapper;
+using Contacts.BusinessLogic.Core;
 using Contacts.BusinessLogic.Services.Abstract;
-using Contacts.Core.BusinessLogic.Services;
-using Contacts.Core.DataAccess;
-using Contacts.Core.Entities.Abstract;
 using Contacts.Core.Response.Abstract;
+using Contacts.Core.Response.Concrete;
+using Contacts.DataAccess.Abstract;
+using Contacts.DTOs.Concrete;
+using Contacts.Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Contacts.BusinessLogic.Services.Concrete
 {
     public class CompanyService : BaseService, ICompanyService
     {
-        public CompanyService(IUnitOfWork unitOfWork) : base(unitOfWork)
-        {
+        public CompanyService(IUnitOfWork unitOfWork) : base(unitOfWork) { }
 
+        public CompanyService(IUnitOfWork unitOfWork, IMapper mapper) : base(unitOfWork, mapper) { }
+
+        public async Task<IResponse> AddAsync(CompanyDto entity)
+        {
+            await UnitOfWork.CompanyRepository.AddAsync(Mapper.Map<Company>(entity));
+            await UnitOfWork.SaveChangesAsync();
+            return new SuccessResponse();
         }
 
-        public CompanyService(IUnitOfWork unitOfWork, IMapper mapper) : base(unitOfWork, mapper)
+        public async Task<IResponse> DeleteAsync(CompanyDto entity)
         {
-
+            UnitOfWork.CompanyRepository.Delete(Mapper.Map<Company>(entity));
+            await UnitOfWork.SaveChangesAsync();
+            return new SuccessResponse();
         }
 
-        public Task<IResponse> AddAsync(IEntity entity)
+        public async Task<IDataResponse<List<CompanyDto>>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var list = await UnitOfWork.CompanyRepository.GetListAsync();
+            return new SuccessDataResponse<List<CompanyDto>>(Mapper.Map<List<CompanyDto>>(list));
         }
 
-        public Task<IResponse> DeleteAsync(IEntity entity)
+        public async Task<IDataResponse<CompanyDto>> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var Company = await UnitOfWork.CompanyRepository.GetAsync(p => p.Id == id, new Expression<Func<Company, object>>[] { c => c.Address });
+            return new SuccessDataResponse<CompanyDto>(Mapper.Map<CompanyDto>(Company));
         }
 
-        public Task<IDataResponse<List<IEntity>>> GetAllAsync()
+        public async Task<IResponse> UpdateAsync(CompanyDto entity)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<IDataResponse<IEntity>> GetByIdAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IResponse> UpdateAsync(IEntity entity)
-        {
-            throw new NotImplementedException();
+            UnitOfWork.CompanyRepository.Delete(Mapper.Map<Company>(entity));
+            await UnitOfWork.SaveChangesAsync();
+            return new SuccessResponse();
         }
     }
 }
