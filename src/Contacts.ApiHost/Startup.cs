@@ -1,4 +1,5 @@
 using Contacts.BusinessLogic.Configurations;
+using Contacts.Core.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -40,9 +41,12 @@ namespace Contacts.ApiHost
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contacts.ApiHost v1"));
             }
+
+            app.UseExceptionMiddleware();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contacts.ApiHost v1"));
 
             app.UseRouting();
 
