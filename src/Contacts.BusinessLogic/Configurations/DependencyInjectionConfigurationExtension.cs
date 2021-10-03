@@ -9,12 +9,13 @@ namespace Contacts.BusinessLogic.Configurations
     {
         public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddDataLayer(configuration).AddMapper();
+
             services.AddTransient<IAddressService, AddressService>();
             services.AddTransient<ICompanyService, CompanyService>();
             services.AddTransient<IContactService, ContactService>();
             services.AddTransient<IPersonService, PersonService>();
 
-            services.AddMapper().AddDataLayer(configuration);
             return services;
         }
     }

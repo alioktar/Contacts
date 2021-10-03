@@ -27,7 +27,7 @@ namespace Contacts.ApiHost
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //services.AddServices(Configuration);
+            services.AddServices(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Contacts.ApiHost", Version = "v1" });
