@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Contacts.HttpApi
 {
-    public class ContactController : BaseController
+    public class ContactsController : BaseController
     {
         private readonly IContactService _contactService;
 
-        public ContactController(IContactService personService)
+        public ContactsController(IContactService personService)
         {
             _contactService = personService;
         }

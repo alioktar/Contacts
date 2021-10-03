@@ -24,6 +24,18 @@ services:
     networks:
       - contacts_network
 
+  redis:
+    image: "redis:alpine"
+    command: redis-server
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    ports:
+     - 6379:6379
+    volumes:
+     - data:/var/lib/redis
+    networks:
+      - contacts_network
+
 volumes:
   data:
     driver: local

@@ -2,6 +2,7 @@
 using Contacts.BusinessLogic.Core;
 using Contacts.BusinessLogic.Core.Exceptions;
 using Contacts.BusinessLogic.Services.Abstract;
+using Contacts.Core.Aspects.Autofac.Caching;
 using Contacts.Core.Response.Abstract;
 using Contacts.Core.Response.Concrete;
 using Contacts.DataAccess.Abstract;
@@ -55,6 +56,7 @@ namespace Contacts.BusinessLogic.Services.Concrete
             var list = await UnitOfWork.PersonRepository.GetListAsync(null, new Expression<Func<Person, object>>[] { p => p.Contacts });
             return new SuccessDataResponse<List<PersonDto>>(Mapper.Map<List<PersonDto>>(list));
         }
+
 
         public async Task<IDataResponse<PersonDto>> GetByIdAsync(Guid id)
         {

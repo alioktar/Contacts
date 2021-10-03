@@ -2,6 +2,7 @@
 using Contacts.BusinessLogic.Core;
 using Contacts.BusinessLogic.Core.Exceptions;
 using Contacts.BusinessLogic.Services.Abstract;
+using Contacts.Core.Aspects.Autofac.Caching;
 using Contacts.Core.Response.Abstract;
 using Contacts.Core.Response.Concrete;
 using Contacts.DataAccess.Abstract;

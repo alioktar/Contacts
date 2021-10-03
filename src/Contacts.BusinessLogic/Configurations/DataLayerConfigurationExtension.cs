@@ -1,6 +1,7 @@
 ﻿using Contacts.DataAccess.Abstract;
 using Contacts.DataAccess.Concrete.EntityFreamework;
 using Contacts.DataAccess.Concrete.EntityFreamework.Contexts;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,12 +15,20 @@ namespace Contacts.BusinessLogic.Configurations
             services.AddDbContext<ContactsContext>(options =>
                 options.UseNpgsql(
                     configuration.GetConnectionString("Default"),
-                    builder => builder.MigrationsAssembly(typeof(ContactsContext).Assembly.GetName().Name)),ServiceLifetime.Transient);
+                    builder => builder.MigrationsAssembly(typeof(ContactsContext).Assembly.GetName().Name)), ServiceLifetime.Transient);
 
             services.AddScoped<DbContext>(provider => provider.GetService<ContactsContext>());
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
+        }
+
+        public static void UseInitializeDatabase(this IApplicationBuilder app)
+        {
+            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                scope.ServiceProvider.GetRequiredService<ContactsContext>().Database.Migrate();
+            }
         }
     }
 }

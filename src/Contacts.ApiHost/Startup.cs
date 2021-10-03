@@ -29,6 +29,7 @@ namespace Contacts.ApiHost
         {
             services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddServices(Configuration);
+            services.AddDependencyResolvers(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Contacts.ApiHost", Version = "v1" });
@@ -56,6 +57,8 @@ namespace Contacts.ApiHost
             {
                 endpoints.MapControllers();
             });
+
+            app.UseInitializeDatabase();
         }
     }
 }
