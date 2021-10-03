@@ -53,7 +53,7 @@ namespace Contacts.Core.DataAccess.EntityFreamework
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, object>>[] includes = null)
         {
-            var query = Entities.AsQueryable();
+            var query = Entities.AsNoTracking().AsQueryable();
 
             return includes != null ?
                 await includes.Aggregate(query, (current, includeProperty) => current.Include(includeProperty)).SingleOrDefaultAsync(filter) :

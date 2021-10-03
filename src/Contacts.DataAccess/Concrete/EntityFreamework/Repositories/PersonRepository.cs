@@ -7,9 +7,6 @@ namespace Contacts.DataAccess.Concrete.EntityFreamework.Repositories
 {
     public class PersonRepository : EntityRepositoryBase<Person>, IPersonRepository
     {
-        public PersonRepository(DbContext context) : base(context)
-        {
-
-        }
+        public PersonRepository(DbContext context) : base(context) { }
     }
 }

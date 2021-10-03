@@ -9,6 +9,8 @@ namespace Contacts.BusinessLogic.MapperProfiles
         public PersonProfile()
         {
             CreateMap<Person, PersonDto>().ReverseMap();
+            CreateMap<Person, PersonAddDto>().ReverseMap();
+            CreateMap<Person, PersonUpdateDto>().ReverseMap();
         }
     }
 }

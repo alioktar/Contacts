@@ -9,6 +9,12 @@ namespace Contacts.BusinessLogic.MapperProfiles
         public ContactProfile()
         {
             CreateMap<Contact, ContactDto>().ReverseMap();
+
+            CreateMap<Contact, ContactAddDto>().ReverseMap();
+            CreateMap<Contact, ContactAddWithPersonDto>().ReverseMap();
+            
+            CreateMap<Contact, ContactUpdateDto>().ReverseMap();
+            CreateMap<Contact, ContactUpdateWithPersonDto>().ReverseMap();
         }
     }
 }
