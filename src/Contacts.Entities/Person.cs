@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Contacts.Entities.Concrete
+namespace Contacts.Entities
 {
     public class Person : Entity
     {
@@ -14,8 +14,7 @@ namespace Contacts.Entities.Concrete
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public Guid CompanyId { get; set; }
-        public virtual Company Company { get; set; }
+        public string Company { get; set; }
 
         public virtual IList<Contact> Contacts { get; set; }
     }

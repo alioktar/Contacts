@@ -11,8 +11,6 @@ namespace Contacts.BusinessLogic.Configurations
         {
             services.AddDataLayer(configuration).AddMapper();
 
-            services.AddTransient<IAddressService, AddressService>();
-            services.AddTransient<ICompanyService, CompanyService>();
             services.AddTransient<IContactService, ContactService>();
             services.AddTransient<IPersonService, PersonService>();
 

@@ -1,6 +1,6 @@
 ﻿using Contacts.Core.DataAccess.EntityFreamework;
 using Contacts.DataAccess.Abstract;
-using Contacts.Entities.Concrete;
+using Contacts.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Contacts.DataAccess.Concrete.EntityFreamework.Repositories

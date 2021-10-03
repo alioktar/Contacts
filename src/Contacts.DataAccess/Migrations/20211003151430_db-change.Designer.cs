@@ -3,15 +3,17 @@ using System;
 using Contacts.DataAccess.Concrete.EntityFreamework.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Contacts.DataAccess.Migrations
 {
     [DbContext(typeof(ContactsContext))]
-    partial class ContactsContextModelSnapshot : ModelSnapshot
+    [Migration("20211003151430_db-change")]
+    partial class dbchange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,4 +1,4 @@
-﻿using Contacts.Entities.Concrete;
+﻿using Contacts.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Contacts.DataAccess.Concrete.EntityFreamework.Contexts
@@ -9,6 +9,5 @@ namespace Contacts.DataAccess.Concrete.EntityFreamework.Contexts
 
         public DbSet<Person> People { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Address> Addresses { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Contacts.DTOs.Concrete;
-using Contacts.Entities.Concrete;
+using Contacts.DTOs;
+using Contacts.Entities;
 
 namespace Contacts.BusinessLogic.MapperProfiles
 {

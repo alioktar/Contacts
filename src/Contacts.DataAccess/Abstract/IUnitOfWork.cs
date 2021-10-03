@@ -7,8 +7,6 @@ namespace Contacts.DataAccess.Abstract
     {
         public IPersonRepository PersonRepository { get; }
         public IContactRepository ContactRepository { get; }
-        public IAddressRepository AddressRepository { get; }
-        public ICompanyRepository CompanyRepository { get; }
 
         Task<int> SaveChangesAsync();
     }

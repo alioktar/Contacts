@@ -2,7 +2,7 @@
 using Contacts.Core.Entities.Concrete;
 using System;
 
-namespace Contacts.Entities.Concrete
+namespace Contacts.Entities
 {
     public class Contact:Entity
     {

@@ -1,5 +1,5 @@
 ﻿using Contacts.Core.DataAccess;
-using Contacts.Entities.Concrete;
+using Contacts.Entities;
 
 namespace Contacts.DataAccess.Abstract
 {

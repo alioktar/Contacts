@@ -2,7 +2,7 @@
 using Contacts.Core.DTOs;
 using System;
 
-namespace Contacts.DTOs.Concrete
+namespace Contacts.DTOs
 {
     public class ContactDto : IDto
     {

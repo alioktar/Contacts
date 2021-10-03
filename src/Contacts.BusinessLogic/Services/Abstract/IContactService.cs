@@ -1,5 +1,5 @@
 ﻿using Contacts.BusinessLogic.Core;
-using Contacts.DTOs.Concrete;
+using Contacts.DTOs;
 
 namespace Contacts.BusinessLogic.Services.Abstract
 {
