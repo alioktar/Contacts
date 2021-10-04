@@ -46,7 +46,7 @@ namespace Contacts.Core.CrossCuttingConcerns.Caching.Redis
             return null;
         }
 
-        public void Add<T>(string key, T valueObject, int expiration)
+        public void Add<T>(string key, T valueObject, int expiration = 60)
         {
             var valueString = JsonConvert.SerializeObject(valueObject, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
             _cache.SetString(key, valueString, new DistributedCacheEntryOptions { AbsoluteExpiration = DateTime.Now.AddMinutes(expiration) });
