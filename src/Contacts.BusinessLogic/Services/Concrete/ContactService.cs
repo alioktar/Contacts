@@ -78,7 +78,7 @@ namespace Contacts.BusinessLogic.Services.Concrete
             return new SuccessDataResponse<List<ContactDto>>(responseData);
         }
 
-        public async Task<IDataResponse<IList<ContactDto>>> GetByPersonIdAsync(Guid id)
+        public async Task<IDataResponse<IList<ContactDto>>> GetContactsByPersonIdAsync(Guid id)
         {
             if (CacheManager.IsAdd($"Contact:GetByPersonId:{id}"))
                 return new SuccessDataResponse<IList<ContactDto>>(CacheManager.Get<IList<ContactDto>>($"Contact:GetByPersonId:{id}"));
@@ -105,6 +105,11 @@ namespace Contacts.BusinessLogic.Services.Concrete
         private async Task<Contact> CheckContact(Guid id)
         {
             return await UnitOfWork.ContactRepository.GetAsync(c => c.Id == id) ?? throw new NotFoundException($"Contact with id {id} not found.");
+        }
+
+        public async Task<IList<LocationReportDto>> GetLocationReport()
+        {
+            return await UnitOfWork.ContactRepository.GetLocationReport();
         }
     }
 }

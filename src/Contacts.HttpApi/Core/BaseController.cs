@@ -2,7 +2,7 @@
 
 namespace Contacts.HttpApi
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class BaseController : ControllerBase
     {

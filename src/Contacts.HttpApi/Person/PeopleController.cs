@@ -17,31 +17,31 @@ namespace Contacts.HttpApi
             _personService = personService;
         }
 
-        [HttpGet("getById")]
+        [HttpGet]
         public async Task<IDataResponse<PersonDto>> GetById(Guid id)
         {
             return await _personService.GetByIdAsync(id);
         }
 
-        [HttpGet("getAll")]
+        [HttpGet]
         public async Task<IDataResponse<IList<PersonDto>>> GetAll()
         {
             return await _personService.GetAllAsync();
         }
 
-        [HttpPost("add")]
+        [HttpPost]
         public async Task<IResponse> Add(PersonAddDto person)
         {
             return await _personService.AddAsync(person);
         }
 
-        [HttpPost("update")]
+        [HttpPost]
         public async Task<IResponse> Update(PersonUpdateDto person)
         {
             return await _personService.UpdateAsync(person);
         }
 
-        [HttpPost("delete")]
+        [HttpPost]
         public async Task<IResponse> Delete(Guid id)
         {
             return await _personService.DeleteAsync(id);

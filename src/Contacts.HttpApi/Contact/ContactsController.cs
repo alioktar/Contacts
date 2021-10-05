@@ -17,43 +17,49 @@ namespace Contacts.HttpApi
             _contactService = personService;
         }
 
-        [HttpGet("getById")]
+        [HttpGet]
         public async Task<IDataResponse<ContactDto>> GetById(Guid id)
         {
             return await _contactService.GetByIdAsync(id);
         }
 
-        [HttpGet("getAll")]
+        [HttpGet]
         public async Task<IDataResponse<IList<ContactDto>>> GetAll()
         {
             return await _contactService.GetAllAsync();
         }
 
-        [HttpGet("getByPersonId")]
-        public async Task<IDataResponse<IList<ContactDto>>> GetAll(Guid id)
+        [HttpGet]
+        public async Task<IDataResponse<IList<ContactDto>>> GetContactsByPersonId(Guid id)
         {
-            return await _contactService.GetByPersonIdAsync(id);
+            return await _contactService.GetContactsByPersonIdAsync(id);
         }
 
-        [HttpPost("add")]
+        [HttpGet]
+        public async Task<IList<LocationReportDto>> GetLocationReport()
+        {
+            return await _contactService.GetLocationReport();
+        }
+
+        [HttpPost]
         public async Task<IResponse> Add(ContactAddDto contact)
         {
             return await _contactService.AddAsync(contact);
         }
 
-        [HttpPost("update")]
+        [HttpPost]
         public async Task<IResponse> Update(ContactUpdateDto contact)
         {
             return await _contactService.UpdateAsync(contact);
         }
 
-        [HttpPost("updateAll")]
+        [HttpPost]
         public async Task<IResponse> UpdateAll(List<ContactUpdateDto> contacts)
         {
             return await _contactService.UpdateRangeAsync(contacts);
         }
 
-        [HttpPost("delete")]
+        [HttpPost]
         public async Task<IResponse> Delete(Guid id)
         {
             return await _contactService.DeleteAsync(id);
